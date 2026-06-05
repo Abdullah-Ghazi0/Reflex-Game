@@ -25,19 +25,17 @@ header {
     width: 100%;
     height: 60px;
     background-color: #261d33;
-    margin-bottom: 56px;
+    margin-bottom: clamp(8px, 5vw, 56px);
 
     display: flex;
     align-items: center;
 
     box-shadow: 0px 20px 30px rgba(255, 255, 255, 0.2);
     letter-spacing: 2px;
-
-    /* padding-left: 300px; */
 }
 
 img {
-    margin-left: 200px;
+    margin-left: clamp(80px, 31vw ,200px);
 }
 
 h1 {
@@ -48,7 +46,7 @@ h1 {
 .warning {
     display: none;
     padding: 1rem;
-    margin: 1rem;
+    margin-bottom: 1rem;
     background: #ffffff;
     font-size: 15px;
     color: #745804;
@@ -59,7 +57,7 @@ h1 {
 }
 
 #start {
-    width: 280px;
+    width: clamp(80px, 30vw,280px);
     background-color: rgb(182, 147, 35);
     color: rgb(44, 40, 40);
     border: none;
@@ -121,8 +119,9 @@ h1 {
 
 .infoBar {
     display: flex;
+    padding: 16px;
     justify-content: center;
-    gap: 5rem;
+    gap: clamp(10px, 8vw, 5rem);
     font-size: 55px;
     max-width: 100%;
 }
@@ -130,8 +129,8 @@ h1 {
 
 .scores {
     text-align: center;
-    font-size: clamp(15px, 5vw ,35px);
-    width: clamp(100px , 33.3vw, 280px);
+    font-size: clamp(15px, 4vw ,35px);
+    width: clamp(100px , 30vw, 280px);
     display: flex;
     align-items: center;
 }

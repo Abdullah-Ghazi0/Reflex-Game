@@ -1,4 +1,4 @@
-# Reflex Game 🎯
+# Reflex Game
 
 A fast-paced browser-based reflex and typing game built with vanilla JavaScript. Players must quickly press the character displayed on screen before it changes. As the score increases, the game becomes faster and introduces numbers and special characters, testing both reaction speed and keyboard accuracy.
 

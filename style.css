@@ -38,6 +38,19 @@ h1 {
     padding-left: 200px;
 }
 
+.warning {
+    display: none;
+    padding: 1rem;
+    margin: 1rem;
+    background: #ffffff;
+    font-size: 15px;
+    color: #745804;
+    border: 1px solid #ffeeba;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+}
+
 #start {
     width: 280px;
     background-color: rgb(182, 147, 35);

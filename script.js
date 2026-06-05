@@ -11,6 +11,8 @@ const overlay = document.querySelector(".modal-overlay");
 const modalTimer = document.querySelector('.modal-text');
 const modalTitle = document.querySelector('#modalTitle')
 
+const warning = document.querySelector('.warning')
+
 const easyList = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G",
               "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M"];
 
@@ -18,6 +20,8 @@ const hardList = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 const hardestList = ["`", "-", "=", "/", "\\", ".", ",", ";", "[", "]"]
 
 const timerLimit = 31000;
+
+const unsupportedDevices = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
 
 let list = [];
 let state;
@@ -207,6 +211,14 @@ function updateTimer() {
     timerBox.textContent = displayTime;
 }
 
+function checkSupport() {
+    const unsupported = unsupportedDevices.test(navigator.userAgent);
+
+    if (unsupported) {
+        warning.style.display = 'block'
+    }
+}
+
 button.addEventListener('click', e => {
     if (!state) {
         startModal();
@@ -234,3 +246,4 @@ window.addEventListener('keydown', e => {
 })
 
 updateScore();
+checkSupport();

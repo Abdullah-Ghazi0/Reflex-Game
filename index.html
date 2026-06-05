@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reeflex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+       <h1> ~ Reeflex </h1>
+    </header>
+    <div class="infoBar">
+        <div class="scores highScore">High Score: <span id="highScore"></span></div>
+        <button id="start" class="clickable">Start</button>
+        <div class="scores">Score: <span id="currentScore"></span></div>
+    </div>
+    <div id="display"></div>
+    <div id="input"></div>
+
+    <div class="timerBox">
+        Time Left:
+        <span id="timer">30</span>
+    </div>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <h2 id="modalTitle"></h2>
+            <p class="modal-text">3</p>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+:root {
+    --bg-color: #0a000e;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--bg-color);
+    color: white;
+
+    font-size: 30px;
+    font-family: sans-serif;
+    
+}
+
+header {
+    width: 100vw;
+    height: 60px;
+    background-color: #261d33;
+    margin-bottom: 56px;
+
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 20px 30px rgba(255, 255, 255, 0.2);
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 34px;
+    padding-left: 200px;
+}
+
+#start {
+    width: 280px;
+    background-color: rgb(182, 147, 35);
+    color: rgb(44, 40, 40);
+    border: none;
+    border-radius: 2rem;
+    font-size: 24px;
+    padding: 24px;
+
+    transition: all 100ms ease;
+}
+
+#start.clickable {
+    background-color: #f5bc00;
+}
+
+#start.clickable:hover {
+    background-color: rgb(196, 156, 25);
+}
+
+#start.clickable:active {
+    background-color: rgb(233, 188, 39);
+    scale: 0.95;
+}
+
+#display {
+    margin: 30px 10px;
+    background-color: #ec4899;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    font-size: 60px;
+    color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#input {
+    background-color: #271e35;
+    height: 100px;
+    width: 300px;
+    border-radius: 56px;
+    font-size: 50px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#input.mistake {
+    background-color: #421d1d;
+}
+
+#currentScore,
+#highScore {
+    padding: 8px;
+}
+
+.infoBar {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    font-size: 55px;
+    max-width: 100%;
+}
+
+
+.scores {
+    text-align: center;
+    font-size: clamp(15px, 5vw ,35px);
+    width: clamp(100px , 33.3vw, 280px);
+    display: flex;
+    align-items: center;
+}
+
+.highScore {
+    justify-content: end;
+}
+
+.timerBox {
+    padding: 36px;
+}
+
+.modal-overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    height: 365px;
+    width: 420px;
+    border-radius: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-text {
+    font-size: 200px;
+    transform: scale(0.6);
+    transition: transform 700ms ease;
+}
+
+.modal-text.load {
+    transform: scale(1);
+}
+
+.modal-info {
+    margin: 36px;
+    white-space: pre-wrap;
+}
+

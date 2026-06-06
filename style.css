@@ -9,7 +9,8 @@
 }
 
 body {
-    height: 100vh;
+    height: 100svh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +18,7 @@ body {
     color: white;
 
     font-size: 30px;
-    font-family: sans-serif;
+    font-family: "Outfit", sans-serif;
     
 }
 
@@ -25,7 +26,7 @@ header {
     width: 100%;
     height: 60px;
     background-color: #261d33;
-    margin-bottom: clamp(8px, 5vw, 56px);
+    margin-bottom: clamp(8px, 5vw, 40px);
 
     display: flex;
     align-items: center;
@@ -35,18 +36,20 @@ header {
 }
 
 img {
-    margin-left: clamp(80px, 31vw ,200px);
+    margin-left: clamp(72px, 29vw ,200px);
 }
 
 h1 {
     font-size: 32px;
     padding: 8px;
+    font-weight: 600;
 }
 
 .warning {
     display: none;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 4px;
+    max-width: 90%;
     background: #ffffff;
     font-size: 15px;
     color: #745804;
@@ -57,13 +60,13 @@ h1 {
 }
 
 #start {
-    width: clamp(80px, 30vw,280px);
+    width: clamp(95px, 30vw,280px);
     background-color: rgb(182, 147, 35);
     color: rgb(44, 40, 40);
     border: none;
     border-radius: 2rem;
-    font-size: 24px;
-    padding: 24px;
+    font-size: clamp(16px, 4vw,24px);
+    padding: clamp(11px, 2vw, 24px);
 
     transition: all 100ms ease;
 }
@@ -82,10 +85,10 @@ h1 {
 }
 
 #display {
-    margin: 30px 10px;
+    margin: clamp(8px, 3vw, 24px) 10px;
     background-color: #ec4899;
-    height: 250px;
-    width: 250px;
+    height: clamp(230px, 20vw, 250px);
+    width: clamp(230px, 20vw, 250px);
     border-radius: 50%;
     font-size: 60px;
     color: black;
@@ -97,14 +100,15 @@ h1 {
 
 #input {
     background-color: #271e35;
-    height: 100px;
-    width: 300px;
+    height: clamp(70px, 20vw, 100px);
+    width: clamp(200px, 50vw, 300px);
     border-radius: 56px;
     font-size: 50px;
     
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 8px;
 
 }
 
@@ -114,23 +118,23 @@ h1 {
 
 #currentScore,
 #highScore {
-    padding: 8px;
+    padding: clamp(2px, 1vw, 8px);
 }
 
 .infoBar {
     display: flex;
     padding: 16px;
     justify-content: center;
-    gap: clamp(10px, 8vw, 5rem);
+    gap: clamp(10px, 4vw, 5rem);
     font-size: 55px;
-    max-width: 100%;
+    max-width: 90%;
 }
 
 
 .scores {
     text-align: center;
     font-size: clamp(15px, 4vw ,35px);
-    width: clamp(100px , 30vw, 280px);
+    width: clamp(80px , 30vw, 280px);
     display: flex;
     align-items: center;
 }
@@ -140,7 +144,7 @@ h1 {
 }
 
 .timerBox {
-    padding: 36px;
+    padding: clamp(18px, 3vw, 36px);
 }
 
 .modal-overlay {
@@ -157,8 +161,8 @@ h1 {
 .modal {
     background-color: rgb(255, 255, 255);
     color: black;
-    height: 365px;
-    width: 420px;
+    height: clamp(170px, 60vw, 320px);
+    width: clamp(250px, 70vw, 380px);
     border-radius: 50px;
 
     display: flex;
@@ -166,6 +170,7 @@ h1 {
     justify-content: center;
     align-items: center;
 
+    padding: 16px;
 }
 
 .modal-overlay.show {
@@ -173,7 +178,7 @@ h1 {
 }
 
 .modal-text {
-    font-size: 200px;
+    font-size: clamp(100px, 20vw, 200px);
     transform: scale(0.6);
     transition: transform 700ms ease;
 }

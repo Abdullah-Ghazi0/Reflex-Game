@@ -9,7 +9,8 @@ const timerBox = document.querySelector("#timer");
 
 const overlay = document.querySelector(".modal-overlay");
 const modalTimer = document.querySelector('.modal-text');
-const modalTitle = document.querySelector('#modalTitle')
+const modalTitle = document.querySelector('#modalTitle');
+const modalFeedback = document.querySelector("#modalFb");
 
 const warning = document.querySelector('.warning')
 
@@ -72,6 +73,7 @@ function endModal() {
 function closeModal() {
     overlay.classList.remove('show');
     modalTitle.textContent = "";
+    modalFeedback.textContent = "";
 }
 
 function startGame() {
@@ -90,6 +92,7 @@ function stopingModal() {
 
     overlay.classList.add('show')
     modalTitle.textContent = "Time Over!"
+    modalFeedback.textContent = "Give Feedback"
     modalTimer.textContent = `Score: ${score}\nAccuracy: ${accuracy}%`;
 
     modalTimer.classList.remove('modal-text');

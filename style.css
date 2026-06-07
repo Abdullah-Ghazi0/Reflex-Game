@@ -30,19 +30,35 @@ header {
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     box-shadow: 0px 20px 30px rgba(255, 255, 255, 0.2);
     letter-spacing: 2px;
-}
-
-img {
-    margin-left: clamp(72px, 29vw ,200px);
 }
 
 h1 {
     font-size: 32px;
     padding: 8px;
     font-weight: 600;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: clamp(8px, 10vw ,200px);
+}
+
+header a {
+    color: rgb(233, 193, 238);
+    letter-spacing: normal;
+    font-size: clamp(15px, 5vw, 18px);
+    text-decoration: none;
+    margin-right: clamp(8px, 7vw ,200px);
+    opacity: 0.6;
+}
+
+a:hover {
+    opacity: 1;
 }
 
 .warning {
@@ -175,6 +191,17 @@ h1 {
 
 .modal-overlay.show {
     display: flex;
+}
+.modal a {
+    text-decoration: none;
+    font-size: 22px;
+    color: #261d33;
+    text-align: center;
+    opacity: 1;
+}
+
+.modal a:hover {
+    color: #7144b9;
 }
 
 .modal-text {

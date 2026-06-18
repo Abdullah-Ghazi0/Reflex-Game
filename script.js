@@ -256,6 +256,12 @@ button.addEventListener('click', e => {
     }
 })
 
+input.addEventListener('click', e => {
+    if (hiddenField && state) {
+        hiddenField.focus();
+    }
+})
+
 window.addEventListener('keydown', e => {
     if (!readKey) return;
     if (hiddenField) return;

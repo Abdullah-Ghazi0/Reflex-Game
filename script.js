@@ -6,13 +6,14 @@ const input = document.querySelector("#input");
 const scoreBox = document.querySelector("#currentScore");
 const highScoreBox = document.querySelector("#highScore");
 const timerBox = document.querySelector("#timer");
+const timerContainer = document.querySelector('.timerBox');
 
 const overlay = document.querySelector(".modal-overlay");
 const modalTimer = document.querySelector('.modal-text');
 const modalTitle = document.querySelector('#modalTitle');
 const modalFeedback = document.querySelector("#modalFb");
 
-const warning = document.querySelector('.warning')
+let hiddenField;
 
 const easyList = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G",
               "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M"];
@@ -42,6 +43,7 @@ function startModalTimer() {
     setTimeout(()=> {
         if (time === 0) {
             modalTimer.textContent = "GO!";
+            hiddenField && hiddenField.focus();
             setTimeout(endModal, 800);
         } else {
             modalTimer.textContent = time;
@@ -108,8 +110,9 @@ function stopGame() {
 
     button.textContent = "Play Again";
     input.textContent = "";
-    display.textContent = ""
+    display.textContent = "";
     button.classList.add('clickable');
+    hiddenField && hiddenField.blur();
 
     state = false;
     readKey = false;
@@ -214,11 +217,32 @@ function updateTimer() {
     timerBox.textContent = displayTime;
 }
 
+function createSupport() {
+    hiddenField = document.createElement('input');
+    hiddenField.type = 'text';
+    hiddenField.classList.add('hidden');
+    document.body.appendChild(hiddenField);
+
+    input.before(timerContainer);
+
+    hiddenField.addEventListener('input', () => {
+        if (!readKey) return;
+        let charEntered = hiddenField.value.slice(-1).toUpperCase();
+        console.log(charEntered)
+
+        if (charEntered === currentCharater) {
+            score++;
+            updateScore();
+        }
+        readKey = false;
+        })
+}
+
 function checkSupport() {
     const unsupported = unsupportedDevices.test(navigator.userAgent);
 
     if (unsupported) {
-        warning.style.display = 'block'
+        createSupport()   
     }
 }
 
@@ -228,19 +252,20 @@ button.addEventListener('click', e => {
         button.textContent = "Press the shown Key";
         button.classList.remove('clickable');
 
-        button.blur()
+        button.blur();
     }
 })
 
 window.addEventListener('keydown', e => {
     if (!readKey) return;
+    if (hiddenField) return;
 
     let keyPressed = e.key.toUpperCase();
     showInput(keyPressed);
 
     if (keyPressed === currentCharater) {
-    score++;
-    updateScore();
+        score++;
+        updateScore();
     } else {
         showMistake();
     }

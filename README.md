@@ -1,30 +1,54 @@
 # Reflex Game
 
-A fast-paced browser-based reflex and typing game built with vanilla JavaScript. Players must quickly press the character displayed on screen before it changes. As the score increases, the game becomes faster and introduces numbers and special characters, testing both reaction speed and keyboard accuracy.
+A fast-paced browser-based keyboard reflex game built with vanilla JavaScript. Press the key shown on screen before it changes — as your score climbs, the speed increases and harder characters get introduced.
 
 ## Preview
 ![Reeflex Preview](static/preview.png)
 
-## Features
-- 30-second timed challenge
-- Countdown before game start
-- Progressive difficulty scaling
-- Letters, numbers, and special characters
-- High score saved using Local Storage
-- Accuracy tracking
-- Visual feedback for incorrect inputs
+**[Play Now](https://abdullah-ghazi0.github.io/Reflex-Game/)**
 
 ## How to Play
-1. Click Start.
-2. Wait for the countdown.
-3. Press the key shown on the screen.
-4. Score points for correct inputs.
-5. Try to achieve the highest score before time runs out.
+ 
+1. Click **Start** and wait for the countdown
+2. A character appears on screen — press that key immediately
+3. Score points for correct inputs, the game speeds up as you go
+4. Survive 30 seconds and aim for the highest score
 
-## Technologies Used
+## Features
+- 30-second timed rounds
+- Progressive difficulty — speed increases as your score grows
+- Three character sets unlocked as you progress: letters → numbers → special characters
+- High score saved locally across sessions
+- Visual feedback for incorrect keypresses
+- Playable on mobile with an on-screen keyboard
+
+ 
+## Difficulty Scaling
+ 
+| Score Range | Speed | Characters Available |
+|-------------|-------|----------------------|
+| 0 – 3       | Slow  | A–Z |
+| 4 – 9       | Medium | A–Z |
+| 10 – 12     | Fast  | A–Z + 0–9 |
+| 13 – 18     | Faster | A–Z + 0–9 |
+| 19+         | Max   | A–Z + 0–9 + Special Characters |
+
+
+## Local Development
+
+Just clone and open in a browser:
+ 
+```bash
+git clone https://github.com/Abdullah-Ghazi0/Reflex-Game.git
+cd Reflex-Game
+open index.html
+```
+
+## Tech Stack
 - HTML
 - CSS
 - JavaScript (Vanilla)
+- Umami Analytics
 
 ## Author
 

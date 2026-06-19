@@ -87,6 +87,7 @@ function startGame() {
     display.textContent = "";
     input.textContent = "";
 
+    window.umami?.track('game_start')
 }
 
 function stopingModal() {
@@ -104,6 +105,11 @@ function stopingModal() {
 }
 
 function stopGame() {
+    window.umami?.track("game_completed", {
+        score:score,
+        highScore:highScore
+    })
+
     clearTimeout(charTimeout)
     clearInterval(timerInterval)
     stopingModal();
@@ -228,7 +234,6 @@ function createSupport() {
     hiddenField.addEventListener('input', () => {
         if (!readKey) return;
         let charEntered = hiddenField.value.slice(-1).toUpperCase();
-        console.log(charEntered)
 
         if (charEntered === currentCharater) {
             score++;
@@ -242,7 +247,8 @@ function checkSupport() {
     const unsupported = unsupportedDevices.test(navigator.userAgent);
 
     if (unsupported) {
-        createSupport()   
+        createSupport();
+        window.umami?.track('mobile_visit');
     }
 }
 

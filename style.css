@@ -98,6 +98,7 @@ a:hover {
     background-color: #ec4899;
     height: clamp(175px, 20vw, 250px);
     width: clamp(175px, 20vw, 250px);
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     font-size: 60px;
     color: black;

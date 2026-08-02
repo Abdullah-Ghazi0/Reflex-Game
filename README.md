@@ -53,5 +53,5 @@ open index.html
 ## Author
 
 **Abdullah Ghazi** <br>
-GitHub: https://github.com/Abdullah-Ghazi0 <br>
+GitHub: https://github.com/abdullahghazi-swe <br>
 LinkedIn: https://www.linkedin.com/in/abdullah-ghazi-swe/
